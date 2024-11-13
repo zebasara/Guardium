@@ -1,0 +1,169 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-image: url(assets/caballero.gif);  /* Ruta de la imagen */
+    background-size: cover;  /* Hace que la imagen cubra toda la pantalla */
+    background-position: center;  /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    height: auto;  /* Asegura que el body ocupe toda la altura de la ventana */
+    width: 100%;  /* Asegura que el body ocupe todo el ancho de la ventana */
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #d4af37;  /* Color dorado del texto */
+    height: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+}
+header p{
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+}
+
+
+/* Sección de misiones */
+.misiones {
+    display: flex;             /* Habilitar Flexbox */
+    justify-content: center;   /* Centra horizontalmente */
+    align-items: center;       /* Centra verticalmente */
+    height: 100vh;             /* Asegura que ocupe toda la altura de la ventana */
+    padding: 20px;
+}
+
+/* Estilos para la cuadrícula de las imágenes */
+.misiones-matriz {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Estilo para cada misión */
+.mision {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;         /* Max ancho para la misión */
+    width: 100%;              /* Ancho completo */
+}
+
+/* Estilo del título dentro de cada misión */
+.mision h2 {
+    margin-top: 0;
+    font-family: 'MedievalSharp', serif;
+}
+
+/* Contenedor de imágenes (Inventario) */
+.inventario-contenedor {
+    display: grid;               /* Usamos CSS Grid */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Ajusta automáticamente el número de columnas según el tamaño */
+    gap: 15px;                   /* Espacio entre las imágenes */
+    justify-items: center;       /* Centra las imágenes dentro de las celdas */
+}
+
+/* Estilo para cada imagen dentro del inventario */
+.inventario-contenedor img {
+    width: 100%;                 /* Las imágenes ocupan el 100% del ancho de su celda */
+    max-width: 120px;            /* Limita el tamaño máximo de las imágenes */
+    height: auto;                /* Mantiene la proporción de las imágenes */
+    border-radius: 8px;          /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra a las imágenes */
+    transition: transform 0.2s ease-in-out;  /* Efecto de transición al pasar el mouse */
+}
+
+.inventario-contenedor img:hover {
+    transform: scale(1.5);       /* Aumenta el tamaño de la imagen al hacer hover */
+}
+h2 {
+    color: #d4af37;
+}
+
+/* Estilo para el botón */
+.button {
+    padding: 10px 20px;
+    background-color: #d4af37;  /* Fondo dorado al pasar el ratón */
+    color: black;
+    box-shadow: 0 0 10px #d4af37;  /* Resplandor dorado */
+    font-family: 'MedievalSharp', serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    visibility: hidden;
+}
+/* barra de navegacion*/
+/* Barra inferior (bottom bar) */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 3px solid #d4af37;  /* Color dorado */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    font-family: 'MedievalSharp', serif;
+    overflow-x: auto;  /* Permite el desplazamiento horizontal si el contenido excede el ancho */
+}
+
+/* Contenido de la barra */
+.bottom-bar-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo de los botones en la barra */
+.bottom-button {
+    background-color: transparent;
+    border: 2px solid #d4af37;  /* Borde dorado */
+    color: #d4af37;  /* Color dorado del texto */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'MedievalSharp', serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bottom-button:hover {
+    background-color: #d4af37;  /* Fondo dorado al pasar el ratón */
+    color: black;
+    box-shadow: 0 0 10px #d4af37;  /* Resplandor dorado */
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    /* En pantallas pequeñas, los botones deben seguir siendo horizontales, pero más compactos */
+    .bottom-bar {
+        padding: 8px 0;  /* Reducir padding para que ocupe menos espacio */
+    }
+
+    /* Ajuste de los botones en pantallas pequeñas */
+    .bottom-button {
+        font-size: 12px;  /* Reducir el tamaño de la fuente */
+        padding: 2px 4px;  /* Reducir el padding para hacer los botones más compactos */
+        margin: 2px;  /* Añadir un margen pequeño entre los botones */
+    }
+
+    .bottom-bar-content {
+        justify-content: space-between;  /* Ajustar el espaciado entre los botones */
+        gap: 1px;  /* Espacio entre los botones */
+    }
+}

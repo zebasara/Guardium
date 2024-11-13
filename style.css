@@ -1,0 +1,194 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-image: url(assets/caballero.gif);  /* Ruta de la imagen */
+    background-size: cover;  /* Hace que la imagen cubra toda la pantalla */
+    background-position: center;  /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat;  /* Evita que la imagen se repita */
+    height: auto;  /* Asegura que el body ocupe toda la altura de la ventana */
+}
+
+/* Encabezado */
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: #d4af37;  /* Color dorado del texto */
+    height: 40px;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+}
+header p{
+    margin: 0;
+    font-family: 'MedievalSharp', serif;
+}
+
+/* Contenedor del botón de minería */
+.boton-mineria {
+    display: grid;
+    place-items: center; /* Centra tanto horizontal como vertical */
+    height: calc(100vh - 80px); /* El alto es el 100vh menos la altura del header */
+    text-align: center; /* Centra el texto dentro del section */
+}
+
+/* Eliminar el display: flex en el body, html y centrado a nivel general */
+
+/* Contenedor de la imagen */
+.contenedor-imagen {
+    position: relative;
+    width: 100px;  /* Ajusta el tamaño según necesites */
+    height: 100px; /* Ajusta el tamaño según necesites */
+    display: flex;
+    left: 20px;
+    justify-content: center;
+    align-items: center;
+    /* Centrado con Flexbox */
+}
+
+/* Imagen de fondo */
+.imagen-fondo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Estilo del contador */
+.contador-mineria {
+    position: absolute;
+    top: 38px;  /* Ajusta la posición según necesites */
+    left: 30px; /* Ajusta la posición según necesites */
+    font-size: 15px;  /* Ajusta el tamaño de la fuente */
+    color: #d4af37;  /* Color dorado del texto */
+    font-family: fantasy;
+}
+
+/* Contenedor de las monedas */
+.monedas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150%;
+    height: 150%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+/* Estilo de las monedas */
+.moneda {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url('assets/moneda.png');
+    background-size: cover;
+    transform-origin: center center;
+}
+
+/* Secciones de misiones en formato de matriz */
+.misiones {
+    background-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.misiones-matriz {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 20px;
+}
+
+.mision {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mision h2 {
+    margin-top: 0;
+}
+
+/* Estilo para el botón */
+.button {
+    padding: 10px 20px;
+    background-color: #d4af37;  /* Fondo dorado al pasar el ratón */
+    color: black;
+    box-shadow: 0 0 10px #d4af37;  /* Resplandor dorado */
+    font-family: 'MedievalSharp', serif;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.button:disabled {
+    visibility: hidden;
+}
+/* barra de navegacion*/
+/* Barra inferior (bottom bar) */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-top: 3px solid #d4af37;  /* Color dorado */
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+    font-family: 'MedievalSharp', serif;
+    overflow-x: auto;  /* Permite el desplazamiento horizontal si el contenido excede el ancho */
+}
+
+/* Contenido de la barra */
+.bottom-bar-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+/* Estilo de los botones en la barra */
+.bottom-button {
+    background-color: transparent;
+    border: 2px solid #d4af37;  /* Borde dorado */
+    color: #d4af37;  /* Color dorado del texto */
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'MedievalSharp', serif;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bottom-button:hover {
+    background-color: #d4af37;  /* Fondo dorado al pasar el ratón */
+    color: black;
+    box-shadow: 0 0 10px #d4af37;  /* Resplandor dorado */
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    /* En pantallas pequeñas, los botones deben seguir siendo horizontales, pero más compactos */
+    .bottom-bar {
+        padding: 8px 0;  /* Reducir padding para que ocupe menos espacio */
+    }
+
+    /* Ajuste de los botones en pantallas pequeñas */
+    .bottom-button {
+        font-size: 12px;  /* Reducir el tamaño de la fuente */
+        padding: 2px 4px;  /* Reducir el padding para hacer los botones más compactos */
+        margin: 2px;  /* Añadir un margen pequeño entre los botones */
+    }
+
+    .bottom-bar-content {
+        justify-content: space-between;  /* Ajustar el espaciado entre los botones */
+        gap: 1px;  /* Espacio entre los botones */
+    }
+}
