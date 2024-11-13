@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardium</title>
+  <style>
+    /* Estilos para la pantalla splash */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1d1f2f;
+    }
+
+    .splash-container {
+      text-align: center;
+      color: white;
+    }
+
+    .loading-circle {
+      border: 5px solid transparent;
+      border-top: 5px solid white;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .message {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="splash-container">
+    <div class="loading-circle"></div>
+    <div class="message">Cargando...</div>
+  </div>
+
+  <script>
+    // Después de 3 segundos, redirigir al contenido principal
+    setTimeout(() => {
+      // Aquí se carga la aplicación principal, por ejemplo:
+      window.location.href = "https://zebasara.github.io/Guardium/"; // URL de tu contenido principal
+    }, 3000); // 3000ms = 3 segundos
+  </script>
+
+</body>
+</html>
